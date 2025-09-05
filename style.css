@@ -1,0 +1,500 @@
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('assets/fonts/BricolageGrotesque-Bold.woff2') format('woff2'),
+        url('assets/fonts/BricolageGrotesque-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('assets/fonts/BricolageGrotesque-ExtraBold.woff2') format('woff2'),
+        url('assets/fonts/BricolageGrotesque-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('assets/fonts/BricolageGrotesque-ExtraLight.woff2') format('woff2'),
+        url('assets/fonts/BricolageGrotesque-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('assets/fonts/BricolageGrotesque-Light.woff2') format('woff2'),
+        url('assets/fonts/BricolageGrotesque-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('assets/fonts/BricolageGrotesque-Medium.woff2') format('woff2'),
+        url('assets/fonts/BricolageGrotesque-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('assets/fonts/BricolageGrotesque-Regular.woff2') format('woff2'),
+        url('assets/fonts/BricolageGrotesque-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bricolage Grotesque';
+    src: url('assets/fonts/BricolageGrotesque-SemiBold.woff2') format('woff2'),
+        url('assets/fonts/BricolageGrotesque-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  font-family: Bricolage Grotesque;
+  color: #fff;
+  background: #000018;
+  overflow: hidden;
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sky {
+  position: absolute;
+  width: 332px;
+  height: 296px;
+  background: url('assets/images/Container.png') no-repeat;
+  background-size: contain;
+}
+
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('assets/images/sky-stars.png') repeat;
+  opacity: 1.6;
+
+  -webkit-mask-image:
+    radial-gradient(circle at top right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%),
+    radial-gradient(circle at bottom left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 75% 75%;
+  -webkit-mask-composite: destination-in;
+
+  mask-image:
+    radial-gradient(circle at top right, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%),
+    radial-gradient(circle at bottom left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  mask-repeat: no-repeat;
+  mask-size: 75% 75%;
+  mask-composite: intersect;
+}
+
+.sky-left {
+  top: 0;
+  left: 0;
+}
+
+.sky-right {
+  top: 0;
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.diagonal {
+  animation: moveDiagonal 40s linear infinite;
+}
+
+@keyframes moveDiagonal {
+  from { background-position: 0 0; }
+  to   { background-position: 1000px 1000px; }
+}
+
+.vertical {
+  animation: moveVertical 20s linear infinite;
+}
+
+@keyframes moveVertical {
+  from { background-position: 0 0; }
+  to   { background-position: 0 1000px; }
+}
+
+.container{
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 28px;
+  align-items: center;
+  justify-items: center;
+}
+
+.main-logo {
+  width: 110px;
+  height: 162px;
+  margin-bottom: 30px;
+}
+
+.house-of{
+  position: relative;
+  top: 0;
+  /* left: 182px; */
+  width: 592px;
+  height: 318px;
+  opacity: 1;
+  border-radius: 16px;
+  background-color: #02021B;
+  border: 1px solid var(--color-blue-12, #0F0F2D)
+}
+
+.house{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 268px;
+    height: 58px;
+    max-width: 980px;
+    opacity: 1;
+    border: 2px solid #444487;
+    border-radius: 100px;
+    box-shadow: 0px 0px 22px 0px #5E10ED4D inset;
+    backdrop-filter: blur(12px);
+    position: relative;
+    left: 158px;
+    top: 54px;
+}
+
+.house-of .house-text {
+  font-size: 24px;
+  opacity: 0.8;
+}
+
+.house-of .logos {
+  position: relative;
+  top: 84px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 44px;
+}
+
+.talrop{
+  width: 106px;
+  height: 122px;
+  opacity: 1;
+  border-radius: 20px;
+  padding: 16px;
+  background-color: #FFFFFF;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.and{
+  font-size: 48px;
+  font-family: inter;
+  background: linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.talrop-img {
+  height: 88px;
+  width: 74px;
+}
+
+.karadan-img {
+  height: 68px;
+  width: 278px;
+}
+
+.launch{
+  width: 100%;
+  height: 200px;
+  background-color: #000018;
+}
+
+.launch .launch-text {
+  position: relative;
+  top: 24px;
+  font-size: 96px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: radial-gradient(circle,  #ffffff 0%, rgba(255, 255, 255, 0) 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.comet-animation {
+  width: 150vmin;
+  height: 150vmin;
+  position: relative;
+  top: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comet-animation .comet {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: white transparent transparent white;
+  border-width: 0em 0.25em 0.75em 0.05em;
+  transform-origin: center center;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .launch-text {
+    font-size: 88px;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 810px) {
+  .house-of{
+    position: relative;
+    height: 308px;
+  }
+  .launch .launch-text {
+    font-size: 72px;
+  }
+  .comet-animation{
+    position: relative;
+    top: 100px;
+  }
+  .comet-animation .comet{
+    width: 755px;
+    height: 755px;
+  }
+}
+
+@media (max-width: 809px) and (min-width: 390px) {
+  .sky{
+    width: 206px;
+    height: 200px;
+  }
+  .comet-animation{
+    position: relative;
+    top: -110px;
+  }
+  .comet-animation .comet{
+    width: 500px;
+    height: 500px;
+  }
+  .main-logo{
+    width: 54px;
+    height: 78px;
+  }
+  .house-of{
+    height: 363px;
+    width: 300px;
+    display: block;
+    /* left: 50px; */
+  }
+  .house-of .logos {
+    display: block;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+  .house{
+    width: 188px;
+    height: 41px;
+    left: 55px;
+    top: 40px;
+  }
+  .house-of .house-text{
+    font-size: 16px;
+  }
+  .launch{
+    display: flex;
+    height: 220px;
+    align-items: center;
+    justify-content: center;
+  }
+  .launch .launch-text {
+    font-size: 43px;
+    max-width: 400px;
+  }
+  .talrop{
+    width: 79px;
+    height: 89px;
+    position: relative;
+    bottom: 14px;
+  }
+  .talrop-img{
+    height: 47px;
+    width: 57px;
+  }
+  .karadan{
+    position: relative;
+    top: 14px;
+  }
+  .karadan-img{
+    height: 48px;
+    width: 195px;
+  }
+}
+
+@media (max-width: 530px) and (min-width: 389px){
+  .comet-animation{
+    position: relative;
+    top: -160px;
+  }
+  .comet-animation .comet{
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 389px) and (min-width: 375px){
+  .sky{
+    width: 206px;
+    height: 200px;
+  }
+  .comet-animation{
+    width: 70vmin;
+    height: 70vmin;
+  }
+  .main-logo{
+    width: 54px;
+    height: 78px;
+  }
+  .house-of{
+    height: 363px;
+    width: 300px;
+    display: block;
+    left: 50px;
+  }
+  .house-of .logos {
+    display: block;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+  .house{
+    width: 188px;
+    height: 41px;
+    left: 54px;
+    top: 40px;
+  }
+  .house-of .house-text{
+    font-size: 16px;
+  }
+  .launch-text {
+    font-size: 43px;
+    max-width: 400px;
+  }
+  .talrop{
+    width: 79px;
+    height: 89px;
+    position: relative;
+    bottom: 14px;
+  }
+  .talrop-img{
+    height: 47px;
+    width: 57px;
+  }
+  .karadan{
+    position: relative;
+    top: 14px;
+  }
+  .karadan-img{
+    height: 48px;
+    width: 195px;
+  }
+}
+
+
+@media (max-width: 375px) and (min-width: 320px){
+  .sky{
+    width: 206px;
+    height: 200px;
+  }
+  .comet-animation{
+    width: 70vmin;
+    height: 70vmin;
+  }
+  .main-logo{
+    width: 54px;
+    height: 78px;
+  }
+  .house-of{
+    height: 363px;
+    width: 300px;
+    display: block;
+    left: 38px;
+  }
+  .house-of .logos {
+    display: block;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+  .house{
+    width: 188px;
+    height: 41px;
+    left: 56px;
+    top: 40px;
+  }
+  .house-of .house-text{
+    font-size: 16px;
+  }
+  .launch-text {
+    font-size: 43px;
+    max-width: 400px;
+  }
+  .talrop{
+    width: 79px;
+    height: 89px;
+    position: relative;
+    bottom: 14px;
+  }
+  .talrop-img{
+    height: 47px;
+    width: 57px;
+  }
+  .karadan{
+    position: relative;
+    top: 14px;
+  }
+  .karadan-img{
+    height: 48px;
+    width: 195px;
+  }
+}
