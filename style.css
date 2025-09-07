@@ -86,6 +86,15 @@ html, body {
   text-align: center;
 }
 
+.sky-section{
+  opacity: 0;
+  transition: opacity 2s ease-in-out; 
+}
+
+.sky-section.show{
+  opacity: 5;
+}
+
 .sky {
   position: absolute;
   width: 332px;
@@ -169,7 +178,15 @@ html, body {
   opacity: 1;
   border-radius: 16px;
   background-color: #02021B;
-  border: 1px solid var(--color-blue-12, #0F0F2D)
+  border: 1px solid var(--color-blue-12, #0F0F2D);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.house-of.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .house{
@@ -237,8 +254,16 @@ html, body {
 
 .launch{
   width: 100%;
-  height: 200px;
+  height: 310px;
   background-color: #000018;
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.launch.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .launch .launch-text {
@@ -247,7 +272,7 @@ html, body {
   font-size: 96px;
   font-weight: bold;
   letter-spacing: 2px;
-  background: radial-gradient(circle,  #ffffff 0%, rgba(255, 255, 255, 0) 80%);
+  background: radial-gradient(circle,  #ffffff 0%, rgba(255, 255, 255, 0) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -263,6 +288,14 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  opacity: 0;
+  transition: opacity 2s ease-in-out; 
+}
+
+.comet-animation.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .comet-animation .comet {

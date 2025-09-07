@@ -15,3 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animate();
 });
+
+
+window.addEventListener("load", () => {
+  document.querySelector(".sky-section").classList.add("show");
+  document.querySelector(".house-of").classList.add("show");
+  document.querySelector(".launch").classList.add("show");
+  document.querySelector(".comet-animation").classList.add("show");
+});
+
