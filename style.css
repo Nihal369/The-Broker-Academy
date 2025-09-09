@@ -288,7 +288,6 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-
   opacity: 0;
   transition: opacity 2s ease-in-out; 
 }
@@ -404,10 +403,11 @@ html, body {
   }
 }
 
-@media (max-width: 530px) and (min-width: 389px){
+@media (max-width: 530px) and (min-width: 390px){
   .comet-animation{
-    position: relative;
-    top: -160px;
+    display: none;
+    /* position: relative;
+    top: -160px; */
   }
   .comet-animation .comet{
     width: 300px;
@@ -415,14 +415,15 @@ html, body {
   }
 }
 
-@media (max-width: 389px) and (min-width: 375px){
+@media (max-width: 390px) and (min-width: 375px){
   .sky{
     width: 206px;
     height: 200px;
   }
   .comet-animation{
-    width: 70vmin;
-    height: 70vmin;
+    /* width: 70vmin;
+    height: 70vmin; */
+    display: none;
   }
   .main-logo{
     width: 54px;
@@ -432,7 +433,6 @@ html, body {
     height: 363px;
     width: 300px;
     display: block;
-    left: 50px;
   }
   .house-of .logos {
     display: block;
@@ -449,7 +449,13 @@ html, body {
   .house-of .house-text{
     font-size: 16px;
   }
-  .launch-text {
+  .launch{
+    display: flex;
+    height: 220px;
+    align-items: center;
+    justify-content: center;
+  }
+  .launch .launch-text {
     font-size: 43px;
     max-width: 400px;
   }
@@ -480,6 +486,7 @@ html, body {
     height: 200px;
   }
   .comet-animation{
+    display: none;
     width: 70vmin;
     height: 70vmin;
   }
@@ -491,7 +498,6 @@ html, body {
     height: 363px;
     width: 300px;
     display: block;
-    left: 38px;
   }
   .house-of .logos {
     display: block;
@@ -508,7 +514,13 @@ html, body {
   .house-of .house-text{
     font-size: 16px;
   }
-  .launch-text {
+  .launch{
+    display: flex;
+    height: 220px;
+    align-items: center;
+    justify-content: center;
+  }
+  .launch .launch-text {
     font-size: 43px;
     max-width: 400px;
   }
